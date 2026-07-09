@@ -10,7 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+import { reportError } from "../lib/error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -38,7 +38,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    reportError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
 
   return (
@@ -77,14 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Akshaya Sayam | Java Backend Developer" },
+      { title: "A | Akshaya Sayam" },
       {
         name: "description",
         content:
           "Portfolio of Akshaya Sayam — Java Backend Developer specialising in Spring Boot, Microservices, and Google Cloud Platform.",
       },
       { name: "author", content: "Akshaya Sayam" },
-      { property: "og:title", content: "Akshaya Sayam | Java Backend Developer" },
+      { property: "og:title", content: "A | Akshaya Sayam" },
       {
         property: "og:description",
         content:
@@ -92,14 +92,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Akshaya Sayam | Java Backend Developer" },
+      { name: "twitter:title", content: "A | Akshaya Sayam" },
       { name: "twitter:description", content: "Portfolio of Akshaya Sayam — Java Backend Developer specialising in Spring Boot, Microservices, and Google Cloud Platform." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/500ebd68-10af-4ee6-8449-46465801b2f5/id-preview-89a169b2--b3772944-aee7-4991-ab42-a97ebd2e515c.lovable.app-1783505856310.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/500ebd68-10af-4ee6-8449-46465801b2f5/id-preview-89a169b2--b3772944-aee7-4991-ab42-a97ebd2e515c.lovable.app-1783505856310.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "alternate icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       {
         rel: "preconnect",

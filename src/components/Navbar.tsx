@@ -33,9 +33,9 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#home" className="group flex items-center gap-2">
-          <span className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-cyan to-violet text-sm font-bold text-primary-foreground">
-            AS
+        <a href="#home" className="flex items-center gap-3">
+          <span className="grid h-9 w-9 place-items-center rounded-full border border-border text-sm font-bold text-foreground">
+            A
           </span>
           <span className="hidden font-display text-lg font-semibold tracking-tight sm:inline">
             Akshaya Sayam
